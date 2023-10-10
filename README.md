@@ -182,4 +182,55 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 }
  ```
 
-debug the go in vscode
+# Datatype - aggrigate
+## Array
+
+examples arr := [3]string{"foo", "bar", "qux"}
+## slice
+
+refrence datatypes
+
+s = append (s, 5, 10, 15 ) // 5,10,15
+s = slices.Delete(s, 1, 2) //remve indices 1 and 2 5
+
+## map types
+
+value and keys
+
+var m map[string] int
+fmt.println(m)
+m=map[string]int{ "foo" :1, "bar":2}
+fmt.println(m)
+
+```go
+    var m map[string][]string
+	fmt.Println(m)
+
+	m = map[string][]string{
+		"cofee": {"a", "b", "c"},
+	}
+	fmt.Println((m))
+```
+
+## struct datatype
+
+similar to c struct
+structs re copied by values as arrays
+```
+	fmt.Println("what would you like to me screem")
+	fmt.Println(" print1 ")
+	in := bufio.NewReader(os.Stdin) //decorator wrapig around the input function
+	choice, _ := in.ReadString('\n')
+	choice = strings.TrimSpace(choice)
+	type mystr struct {
+		name  string
+		price map[string]float64
+	}
+	menu := []mystr{
+		{name: "coffee", price: map[string]float64{"small": 10, "medium": 20, "large": 30}},
+		{name: "tea", price: map[string]float64{"small": 10, "medium": 20, "large": 30}},
+	}
+	fmt.Println(menu)
+```
+
+
