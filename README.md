@@ -74,4 +74,112 @@ var myFloat float64 = float64(myInt)
 - Example: `a := 42`, `&a` represents the memory address of `a`, `*b` holds the value in `a`.
 - Use pointers to share memory and use copies whenever possible to avoid unintended side effects.
 
-Create a cli application
+```go
+    fmt.Println("hello")
+	var a string
+	a = "foo"
+	fmt.Println(a)
+
+	var b int = 99
+	fmt.Println(b)
+
+	d := 3.14
+	fmt.Println(d)
+
+	// var e int = d cannot use d (variable of type float64) as int value in variable declaration
+	var c int = int(d)
+	fmt.Println(c)
+	var e int8 = 54
+	fmt.Println(e)
+
+	x, y := 10, 5
+	z := x == y
+	fmt.Println(z)
+	fmt.Println(x - y)
+	fmt.Println(x + y)
+	fmt.Println(x / y)
+	fmt.Println(x % y)
+	fmt.Println(x * y)
+
+	// constants
+	const g = 42
+	var h int = g
+	var i float64 = g
+	fmt.Println(i, h)
+
+	const j = iota
+
+	fmt.Println(j)
+
+	const (
+		k = 2 * 5
+		l
+		m = iota
+	)
+
+	fmt.Println(k, l, m)
+
+	s := "hello"
+	p := &s
+	fmt.Println(p)
+	fmt.Println(*p)
+
+	// dereferncing
+	*p = "hello revathy"
+	fmt.Println(s)
+```
+
+# Create a cli application
+
+fmt - For formatted I/O.
+bufio - For buffered I/O operations.
+os - For operating system functions.
+strings - For string manipulation functions.
+net/http - For creating HTTP server and client.
+
+- os
+    - stdin
+    - stdout
+    - strerr
+- fmt
+    - scan
+    - print
+    - bufio pkg.go.dev/bufio
+
+ ```go
+    fmt.Println("what would you like to me screem")
+	in := bufio.NewReader(os.Stdin) //decorator wrapig around the input function
+	s, _ := in.ReadString('\n')
+	s = strings.TrimSpace(s)
+	s = strings.ToUpper(s)
+	fmt.Println(s + "!")
+ ```
+
+ ## web service
+
+ 2 clients interacting
+ all these by single package 
+
+https://pkg.go.dev/net/http
+ ```
+ package main
+
+import (
+	"io"
+	"net/http"
+	"os"
+)
+
+func main() {
+	http.HandleFunc("/", Handler)
+	http.ListenAndServe("localhost:7700", nil)
+}
+
+func Handler(w http.ResponseWriter, r *http.Request) {
+	f, _ := os.Open("./menu.txt")
+	io.Copy(w, f)
+
+}
+ ```
+
+debug the go in vscode
