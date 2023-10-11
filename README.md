@@ -233,4 +233,14 @@ structs re copied by values as arrays
 	fmt.Println(menu)
 ```
 
+# looping
 
+infinite loop - for { .. }
+loop till condition - for condition { }
+counter-based loop - for initialisear;test; post cause{}
+```go
+    for i := 1; i < 5; i++ {
+		fmt.Println(i)
+	}
+```
+# branching
