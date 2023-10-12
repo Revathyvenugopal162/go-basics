@@ -294,3 +294,10 @@ loop:
 		}
 	}
 ```
+* Deffered function
+![Alt text](image.png)
+
+* panic
+
+go to statement
+
