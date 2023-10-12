@@ -245,9 +245,41 @@ counter-based loop - for initialisear;test; post cause{}
 ```
 # branching
 
-if statement
-switch statement
-logical switches
+## if statement
+```
+age := 20
+
+	if age >= 18 {
+		fmt.Println("You are an adult.")
+	} else {
+		fmt.Println("You are a minor.")
+	}
+```
+## switch statement
+logical operators like && (and) and || (or) for complex conditions in if statements and switch cases.
+```
+day := "Monday"
+
+	switch day {
+	case "Monday":
+		fmt.Println("It's the start of the week.")
+	case "Friday", "Saturday":
+		fmt.Println("It's the weekend!")
+	default:
+		fmt.Println("It's a regular weekday.")
+	}
+```
+## logical switches
+```
+age := 25
+	isStudent := false
+
+	if age >= 18 && !isStudent {
+		fmt.Println("You are eligible to vote.")
+	} else {
+		fmt.Println("You are not eligible to vote.")
+	}
+```
 
 ```go
 type mystr struct {
@@ -294,10 +326,14 @@ loop:
 		}
 	}
 ```
-* Deffered function
+##  Deffered function
+
+defer statement that schedules a function call to be run after the function completes. It's often used for cleanup actions.
 ![Alt text](image.png)
 
-* panic
+## panic and recovery 
 
-go to statement
+To handle abnormal situation.
+
+## go to statement
 
