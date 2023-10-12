@@ -337,3 +337,9 @@ To handle abnormal situation.
 
 ## go to statement
 
+# organising programs
+
+# Method
+
+tighter coupling between type and method
+
